@@ -1,11 +1,13 @@
-import News from "../News/News";
+import { useLoaderData } from "react-router-dom";
 import Header from "../Shared/Header/Header";
 import LeftSideNav from "../Shared/LeftSideNav/LeftSideNav";
 import Navbar from "../Shared/Navbar/Navbar";
 import RightSideNav from "../Shared/RightSideNav/RightSideNav";
 import BreakingNews from "./BreakingNews";
+import NewsCard from "../NewsCard/NewsCard";
 
 const Home = () => {
+    const news = useLoaderData();
     return (
         <div>
             <Header></Header>
@@ -17,7 +19,9 @@ const Home = () => {
                 </div>
                 <div className="md:col-span-2">
                     <h2 className="text-xl font-semibold">Dragon News Home</h2>
-                    <News></News>
+                    {
+                     news.map(nw =><NewsCard nw={nw} key={nw._id}></NewsCard>)
+                    }
                 </div>
                 <div>
                     <RightSideNav></RightSideNav>

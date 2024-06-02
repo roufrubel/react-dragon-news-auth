@@ -1,19 +1,23 @@
-import { useEffect, useState } from "react";
-import NewsCard from "../NewsCard/NewsCard";
+import { useParams } from "react-router-dom";
+import Header from "../Shared/Header/Header";
+import RightSideNav from "../Shared/RightSideNav/RightSideNav";
+import Navbar from "../Shared/Navbar/Navbar";
 
 
 const News = () => {
-    const [news, setNews] = useState([]);
-    useEffect( () => {
-        fetch('news.json')
-        .then(res => res.json())
-        .then(data => setNews(data))
-    }, [])
+    const {id} = useParams();
     return (
         <div>
-            {
-                news.map(nw =><NewsCard nw={nw} key={nw._id}></NewsCard>)
-            }
+            <Header></Header>
+            <Navbar></Navbar>
+            <div className="grid grid-cols-1 md:grid-cols-4">
+                <div className="grid md:col-span-3">
+                <h2>News Details {id}</h2>
+                </div>
+                <div>
+                    <RightSideNav></RightSideNav>
+                </div>
+            </div>
         </div>
     );
 };

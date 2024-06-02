@@ -11,6 +11,12 @@ const firebaseConfig = {
   storageBucket: "react-dragon-news-auth-3b8db.appspot.com",
   messagingSenderId: "940220519285",
   appId: "1:940220519285:web:4ec406fad90a304626393c"
+  // apiKey: import.meta.evn.VITE_APIKEY,
+  // authDomain: import.meta.evn.VITE_AUTHDOMAIN,
+  // projectId: import.meta.evn.VITE_PROJECTID,
+  // storageBucket: import.meta.evn.VITE_STORAGEBUCKET,
+  // messagingSenderId: import.meta.evn.VITE_MESSAGINGSENDERID,
+  // appId: import.meta.evn.VITE_APPID
 };
 
 // Initialize Firebase
