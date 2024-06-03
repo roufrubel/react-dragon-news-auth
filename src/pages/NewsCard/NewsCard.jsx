@@ -5,8 +5,6 @@ import { FaStar } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 
-
-
 const NewsCard = ({nw}) => {
     return (
         <div className="mt-8">
